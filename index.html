@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <title>VUE js train</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand navbar-light bg-dark">
+        <div class="nav navbar-nav">
+            <a class="nav-item nav-link active" style="color: aliceblue;" href="#">VUE TRAINING <span class="sr-only">(current)</span></a>
+        </div>
+    </nav>
+
+    <div class="container" id="app">
+        <h1 :class="!success ? textError : '' ">{{message}}</h1> <!-- v-bing:class="" // {'text-dark': success, 'text-danger': !success}: ici nous avons envoyer un objet mais on pouvait: success ? 'text-dark' : 'text-danger' ou avoir l'objet dans notre app.js -->
+        <a :href="link" :title=" 'DK website' " :class="linkStyle()">visit my website</a> <!-- or v-bind:href="" // methode linkStyle() in my app.js -->
+
+        <br><br>
+
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" name="" id="" v-model="success"> <!-- v-model with checkbox -->
+            checked for Display
+          </label>
+        </div>
+
+        <div class="alert alert-success" role="alert" v-if="success"> <!-- display if success is true // v-show mets un display none dans le html-->
+            <strong>Bravooo !!!!</strong>
+            <div class="float-right" @click="close"> <!-- sor v-on:click=""-->
+                <i class="fa fa-times"></i> 
+            </div>
+        </div>
+
+        <div class="alert alert-danger" role="alert" v-else> <!-- v-else or v-if="!success" -->
+            <strong>Desoleeee !!!</strong>
+        </div>
+
+        <hr>
+
+        <h2>Some best technologies</h2>
+        <div>
+            <ul v-for="tech in technologies"> <!-- v-for -->
+                <li>{{tech}}</li>
+            </ul>
+        </div>
+
+        <br>
+        <hr>
+
+        <h3>Lier un champ à une variable avec v-model</h3> <!-- v-model ou utiliser :value -->
+
+        <div class="form-group mb-5">
+          <label for="">Prenoms</label>
+          <input type="text" name="" id="" class="form-control" placeholder="type name" v-model="formText">
+          <small class="text-success">{{formText}}</small>
+        </div>
+    </div>
+
+
+
+    <script src="js/vue.js"></script>
+    <script src="js/app1.js"></script>
+    <script src="js/all.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <title>VUE js train</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand navbar-light bg-dark">
+        <div class="nav navbar-nav">
+            <a class="nav-item nav-link active" style="color: aliceblue;" href="#">VUE TRAINING: composant<span class="sr-only">(current)</span></a>
+        </div>
+    </nav>
+
+    <div class="container" id="app">
+        <h3>Component 2</h3>
+        <counter></counter>
+
+        <h3>Component avec props</h3>
+        <counter :start="3"></counter>
+        <br>
+        <h3>Component</h3> <!--relation composant parent-enft-->
+        <button @click="showAlert" v-if="!alert">Alerter</button>
+        <br>
+        <message :message="message2" v-if="alert" header="Suprise !!!" @close="hideAlert"></message> <!--jai specifier un type par defaut // @close : event emit (evenement personnalisé) -->
+        <br>
+        <br>
+        <!-- <h3>Component</h3> -->
+        <div class="row">
+            <div class="col-md-8">
+                <formuser v-model="user"></formuser> <!-- :user (props) = "user (var data)" -->
+                    <!-- ici on va prendre v-model pour call notre props (:user) -->
+            </div>
+
+            <div class="col-md-4">
+                {{user}}
+            </div>
+        </div>
+
+            
+    </div>
+    
+
+
+
+    <script src="js/vue.js"></script>
+    <script src="js/app6.js"></script>
+    <script src="js/all.js"></script>
+</body>
+
+</html>

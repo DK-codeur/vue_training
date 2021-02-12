@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <title>VUE js train</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand navbar-light bg-dark">
+        <div class="nav navbar-nav">
+            <a class="nav-item nav-link active" style="color: aliceblue;" href="#">VUE TRAINING: Directives<span
+                    class="sr-only">(current)</span></a>
+        </div>
+    </nav>
+
+    <div class="container" id="app">
+        <!-- modifieur: @click.prevent; @click.stop: stoper la propagation; @click.prevent.stop; @click.capture; @click.self-->
+        <h3>Directive @click</h3>
+        <a href="http://dk-codeur.io" @click.prevent="myClick" class="btn btn-primary">Go to our site</a>
+
+        <hr>
+
+        <h3>Dirctive v-model</h3>
+        <!--v-model.lazy: effectue les chgmt si l'on sort du champ, .number, .trim    @keyup-->
+        <input type="text" name="" id="" v-model.lazy="message">
+        <div>{{message}}</div>   
+        
+        <hr>
+        <h3>Directive @keyup</h3> <!--utilisation: @keyup.space="" : pour latouche space ou .[le code de la touche] @keyup pour toute les touch-->
+        <input type="text" name="" id="" @keyup="myKeyup">
+
+        <hr>
+        <h4>Creons notre propre directive</h4>
+        <input type="text" name="" id="" v-salut.a.b="message">
+
+
+    </div>
+
+
+
+    <script src="js/vue.js"></script>
+    <script src="js/app4.js"></script>
+    <script src="js/all.js"></script>
+</body>
+
+</html>

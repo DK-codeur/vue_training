@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <title>VUE js train</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand navbar-light bg-dark">
+        <div class="nav navbar-nav">
+            <a class="nav-item nav-link active" style="color: aliceblue;" href="#">VUE TRAINING: watcher & propriete combiné<span
+                    class="sr-only">(current)</span></a>
+        </div>
+    </nav>
+
+    <div class="container" id="app">
+     
+        <div>
+            First name : {{firstname}} <br>
+            Last name : {{lastname}} <br>
+            <!-- Full name : {{fullname}} <br> -->
+            Full name : <input type="text" name="" id="" v-model="fullname">
+
+            <hr>
+
+              <label for="">Watched input</label>
+              <input type="text" name="" id="" class="form-control" placeholder="" v-model="myWatchedInput">
+            </div>
+        </div>
+        
+    </div>
+
+
+
+    <script src="js/vue.js"></script>
+    <script src="js/app3.js"></script>
+    <script src="js/all.js"></script>
+</body>
+
+</html>
